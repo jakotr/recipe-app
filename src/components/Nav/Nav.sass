@@ -1,0 +1,57 @@
+.Nav
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: #ccc
+    min-height: 150px
+    box-shadow: 0 1px 1px 1px #888
+    &__logo
+        width: 30%
+        margin-left: 20px
+        &__link 
+            color: #000
+            text-decoration: none
+            display: flex
+            align-items: center
+            justify-content: flex-start
+            &__icon
+                font-size: 60px
+                color: brown
+                transition: .3s
+            &__title
+                font-size: 30px
+                font-family:  cursive
+                & span
+                    color: brown
+                    font-size: 34px
+        &__link:hover &__link__icon
+            transform: scale(1.1) translate(10px, -10px)
+    &__links 
+        min-width: 20%
+        margin-right: 20px
+        &__list
+            display: flex
+            list-style: none
+            justify-content: space-around
+            &__item
+                color: #000000
+                text-decoration: none
+                font-size: 18px
+                padding: 5px
+                position: relative
+                &::before
+                    content: '' 
+                    position: absolute
+                    bottom: -20px
+                    left: 50%
+                    transform: translateX(-50%)
+                    border-bottom: 0px solid brown
+                    border-right: 20px solid transparent
+                    border-left: 20px solid transparent
+                    transition: .3s
+                &:hover::before
+                    border-bottom: 20px solid brown
+                    
+
+

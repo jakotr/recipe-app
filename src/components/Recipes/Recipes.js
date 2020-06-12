@@ -1,34 +1,63 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import {Link} from 'react-router-dom';
 
 import RecipeItem from '../RecipeItem/RecipeItem';
+import {fetchData} from '../../api';
+import SearchBar from '../SearchBar/SearchBar';
 
 import './Recipes.sass'
 
 
-export default function Recipes({data:{data}}) {
+export default function Recipes() {
 
-    if(!data) {
-        return 'loading...';
+    const [data, setData] = useState([]);
+    const [query, setQuery] = useState('');
+    const [isClicked, setIsClicked] = useState(false);
+    const [recipeIndex, setRecipeIndex] = useState(false);
+  
+    useEffect(() => {
+      const fetchedData = async () => {
+        setData(await fetchData(query));
+      }
+      fetchedData();
+    }, [query]);
+  
+  
+    const handleSubmit = (e) => {
+      console.log()
+      e.preventDefault();
+      setQuery(e.target.query.value)
+      
+      e.target.query.value = '';
     }
 
-    console.log(data.hits);
-
+    const handleClick = (index) => {
+        console.log(index);
+        setRecipeIndex(index);
+        setIsClicked(true); 
+    }
+    
     return (
         <div className = 'Recipes'>
-            {data.hits.map((recipe, index) => (
-                <div key ={index} className="Recipes__item">
-                    <div className="Recipes__item__overlay">
-                        <img className='Recipes__item__overlay__image' src={recipe.recipe.image} alt={recipe.recipe.label}  />
-                        <a href="#" className="Recipes__item__overlay__link">
-                            <span className="Recipes__item__overlay__link__icon">
-                                <i className="fas fa-search"></i>
-                                <p>Read more</p>
-                            </span>
-                        </a>
+            <SearchBar handleSubmit = {handleSubmit} />
+            {isClicked ? <RecipeItem data = {data.data.hits} index = {recipeIndex} /> : null}
+            {!data.data ? 'loading...' : 
+                data.data.hits.map((recipe, index) => (
+                    <div key ={index} className="Recipes__item">
+                        <div className="Recipes__item__overlay">
+                            <img className='Recipes__item__overlay__image' src={recipe.recipe.image} alt={recipe.recipe.label}  />
+                            <div onClick = {() => handleClick(index)} className="Recipes__item__overlay__link">
+                                <span className="Recipes__item__overlay__link__icon">
+                                    <i className="fas fa-search"></i>
+                                    <p>Read more</p>
+                                </span>
+                            </div>
+                        </div>
+                        <h3 className= 'Recipes__item__title'>{recipe.recipe.label} </h3>
                     </div>
-                    <h3 className= 'Recipes__item__title'>{recipe.recipe.label} </h3>
-                </div>
-            ))}
+                ))
+            }
+            
         </div>
     )
 }

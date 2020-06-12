@@ -1,0 +1,96 @@
+.RecipeItem
+    position: fixed
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    background-color: #0000007e
+    z-index: 1
+    display: flex
+    justify-content: center
+    align-items: center
+    &__overlay
+        width: 70%
+        max-height: 90%
+        background-color: #fff
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-start
+        padding: 20px
+        position: relative
+        border: 3px solid #333
+        border-radius: 20px
+        &__title
+            font-size: 22px
+            width: 100%
+            padding: 20px 0 40px 0
+            text-align: center
+            border-bottom: 1px solid #333
+        &__section
+            width: 300px
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            &__image
+                min-width: 300px
+                min-height: 300px
+            &__table
+                margin-top: 20px
+                min-width: 300px
+                display: flex
+                flex-wrap: wrap
+                & h4
+                    width: 100%
+                    text-align: center
+                    padding: 3px 0
+                    border: 2px solid #000000
+                &__content
+                    display: flex
+                    width: 100%
+                    border: 1px solid #000
+                    &__title, &__value
+                        // padding: 3px
+                        width: 50%
+                        
+                        & p
+                            border: 1px solid #000000
+                            padding: 3px
+        &__ingredients
+            width: calc(100% - 300px)
+            display: flex
+            align-items: flex-start
+            flex-wrap: wrap
+            padding: 0 20px
+            & h3 
+                width: 100%
+                text-align: center
+                margin: 30px 0
+            &__row
+                width: 100%
+                display: flex
+                border-bottom: 1px solid #333
+                padding: 3px 0
+                &:last-child
+                    border: none
+                &__title
+                    width: 70%
+                &__weight
+                    width: 30%
+        &__closeBtn
+            position: absolute
+            top: 10px
+            right: 10px
+            cursor: pointer
+            font-size: 40px
+            border: none
+            color: brown
+                
+                    
+        
+        
+        
+
+
+        
+    

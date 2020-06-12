@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
 
 import RecipeItem from '../RecipeItem/RecipeItem';
 import {fetchData} from '../../api';
@@ -13,7 +12,8 @@ export default function Recipes() {
     const [data, setData] = useState([]);
     const [query, setQuery] = useState('');
     const [isClicked, setIsClicked] = useState(false);
-    const [recipeIndex, setRecipeIndex] = useState(false);
+    const [recipeIndex, setRecipeIndex] = useState('');
+    const [display, setDisplay] = useState(true);
   
     useEffect(() => {
       const fetchedData = async () => {
@@ -35,12 +35,13 @@ export default function Recipes() {
         console.log(index);
         setRecipeIndex(index);
         setIsClicked(true); 
+        setDisplay(!display);
     }
     
     return (
         <div className = 'Recipes'>
             <SearchBar handleSubmit = {handleSubmit} />
-            {isClicked ? <RecipeItem data = {data.data.hits} index = {recipeIndex} /> : null}
+            {isClicked ? <RecipeItem data = {data.data.hits} index = {recipeIndex} display = {display} /> : null}
             {!data.data ? 'loading...' : 
                 data.data.hits.map((recipe, index) => (
                     <div key ={index} className="Recipes__item">

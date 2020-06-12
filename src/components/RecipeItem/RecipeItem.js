@@ -3,20 +3,27 @@ import React, {useState, useEffect}  from 'react';
 import './RecipeItem.sass';
 
 
-export default function RecipeItem({data, index}) {
+export default function RecipeItem({data, index, display}) {
 
     // if(!data) {
     //     return 'loading...';
     // }
 
     // const [recipe, setRecipe] = useState(data);
+    const [isClicked, setIsClicked] = useState(true);
 
+    useEffect(() => {
+        setIsClicked(true)
+    }, [display])
 
-    
+    const handleClick = () => {
+        setIsClicked(false);
+    }
 
-    console.log(data, index);
+    // console.log(data, index);
 
     return (
+        isClicked ?
         <div className="RecipeItem">
             <div className="RecipeItem__overlay">
                 <h3 className= 'RecipeItem__overlay__title'>{data[index].recipe.label} </h3>
@@ -50,14 +57,17 @@ export default function RecipeItem({data, index}) {
                             <p className="RecipeItem__overlay__ingredients__row__weight">{Math.floor(ing.weight)}g</p>
                         </div>
                     ))}
+                    <a target='blank' className='RecipeItem__overlay__ingredients__link' href={data[index].recipe.url}>
+                        Show the Recipe
+                    </a>
                 </div>
 
-                <div className="RecipeItem__overlay__closeBtn">
-                    <i class="fas fa-times-circle"></i>
+                <div onClick= {handleClick} className="RecipeItem__overlay__closeBtn">
+                    <i className="fas fa-times-circle"></i>
                 </div>
                     
 
             </div> 
-      </div>
+      </div> : null
     )
 }

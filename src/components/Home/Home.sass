@@ -1,7 +1,6 @@
 .Home__recipes
-    margin-top: 50px
     padding: 20px
-    background-color: #ddd
+    background-color: #333333
     &__elements
         display: flex
         justify-content: space-evenly
@@ -11,9 +10,9 @@
             position: relative
             min-width: 200px
             height: 150px
-            box-shadow: 0 0 1px 0 #333
+            box-shadow: 0 0 2px 0 #fff
             margin: 5px
-            color: #000
+            transition: .3s
             &__image
                 width: 100%
                 height: 100%
@@ -23,8 +22,11 @@
                 bottom: 0px
                 left: 0
                 text-align: center
+                color: white
                 padding: 3px 0
-                background-color: #ffffff5b
+                background-color: #05050581
+            &:hover
+                transform: translateY(-5px)
     &__about
         margin-top: 50px
         padding: 20px

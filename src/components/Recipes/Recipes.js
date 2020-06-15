@@ -7,13 +7,19 @@ import SearchBar from '../SearchBar/SearchBar';
 import './Recipes.sass'
 
 
-export default function Recipes() {
+export default function Recipes(props) {
 
     const [data, setData] = useState([]);
     const [query, setQuery] = useState('');
     const [isClicked, setIsClicked] = useState(false);
     const [recipeIndex, setRecipeIndex] = useState('');
     const [display, setDisplay] = useState(true);
+
+    useEffect(() => {
+        if(props.location.query) {
+            setQuery(props.location.query);
+        }
+    }, [props.location.query])
   
     useEffect(() => {
       const fetchedData = async () => {
@@ -24,7 +30,6 @@ export default function Recipes() {
   
   
     const handleSubmit = (e) => {
-      console.log()
       e.preventDefault();
       setQuery(e.target.query.value)
       
@@ -32,7 +37,6 @@ export default function Recipes() {
     }
 
     const handleClick = (index) => {
-        console.log(index);
         setRecipeIndex(index);
         setIsClicked(true); 
         setDisplay(!display);
@@ -40,7 +44,7 @@ export default function Recipes() {
     
     return (
         <div className = 'Recipes'>
-            <SearchBar handleSubmit = {handleSubmit} />
+            <SearchBar handleSubmit = {handleSubmit} placeholder = {query} />
             {isClicked ? <RecipeItem data = {data.data.hits} index = {recipeIndex} display = {display} /> : null}
             {!data.data ? 'loading...' : 
                 data.data.hits.map((recipe, index) => (

@@ -6,6 +6,7 @@ import Recipes from './components/Recipes/Recipes';
 import Home from './components/Home/Home';
 import Blog from './components/Blog/Blog';
 import About from './components/About/About';
+import BlogReadMore from './components/BlogReadMore/BlogReadMore';
 
 import './App.sass';
 
@@ -18,7 +19,8 @@ function App() {
           <Route path='/' exact component={Home} />
           <Route path='/recipes' exact component={Recipes} />
           <Route path='/about' component= {About} />
-          <Route path='/blog' component= {Blog} />
+          <Route path='/blog' exact component= {Blog} />
+          <Route path='/blog/:id' component= {BlogReadMore} />
         </Switch>
       </div>
       <footer className='footer'> &copy; RecipeIdeas 2020</footer>

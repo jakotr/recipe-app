@@ -1,32 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import {blogData} from '../../util/data';
+
 import './Blog.sass';
 
 export default function Blog() {
 
-    const imageData = [
-        "https://cdn.pixabay.com/photo/2019/08/14/20/08/keto-4406621_960_720.jpg",
-        "https://cdn.pixabay.com/photo/2020/05/02/09/15/eggs-5120477_960_720.jpg",
-        "https://cdn.pixabay.com/photo/2015/09/15/15/53/bank-note-941246_960_720.jpg",
-        "https://cdn.pixabay.com/photo/2016/11/20/09/06/bowl-1842294_960_720.jpg",
-        "https://cdn.pixabay.com/photo/2015/01/09/11/22/fitness-594143_960_720.jpg",
-    ];  
-    const titleData = [
-        'Ketogenic diet for losing extra kilos',
-        'Best protein source',
-        'Eat for 10$ for a week',
-        'Fastes meal you ever made!',
-        'Get some weight',
-    ];
-    const dateData = [
-        '11 June 2019',
-        '3 May 2019',
-        '17 april 2019',
-        '22 March 2019',
-        '12 February 2019',
-    ];
-
+    const {imageData, titleData, dateData} = blogData;
 
     return (
         <div className = 'Blog'>

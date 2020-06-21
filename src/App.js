@@ -1,5 +1,6 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {Link} from 'react-scroll';
 
 import Nav from './components/Nav/Nav';
 import Recipes from './components/Recipes/Recipes';
@@ -23,6 +24,15 @@ function App() {
           <Route path='/blog/:id' component= {BlogReadMore} />
         </Switch>
       </div>
+      <Link
+        className='ScrollToTop'
+        activeClass='active'
+        to ='App'
+        smooth = {true}
+        duration = {300}
+      >
+        <i className="fas fa-arrow-up"></i>
+      </Link>
       <footer className='footer'> &copy; RecipeIdeas 2020</footer>
     </Router>
   );

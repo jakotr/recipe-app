@@ -1,5 +1,5 @@
 .Home__recipes
-    padding: 20px
+    padding: 50px 30px
     background-color: #333333
     &__elements
         display: flex
@@ -9,7 +9,7 @@
         &__element
             position: relative
             min-width: 200px
-            height: 150px
+            height: 180px
             box-shadow: 0 0 2px 0 #fff
             margin: 5px
             transition: .3s
@@ -33,3 +33,148 @@
     &__blog
         margin-top: 50px
         padding: 20px
+.Home__intro
+    &__info
+        // background-image: linear-gradient(to top, #e8eaee 0%, #ffffff 100%)
+        color: #333
+        min-height: 500px
+        position: relative
+        margin-bottom: 50px
+        & h2
+            padding: 30px 0 5px 30px
+        & h4
+            padding: 5px 0 0 30px
+        & p 
+            padding: 2px 0 0 30px
+        &__link
+            position: absolute
+            bottom: 100px
+            right: 150px
+            background-color: brown
+            color: #eeeeee
+            text-decoration: none
+            padding: 10px 20px
+            border-radius: 5px
+            font-size: 22px
+            box-shadow: 0 1px 2px 1px #aaa
+            transition: .3s
+            &:hover
+                transform: scale(1.1) translateY(10px)
+        &__image    
+            background-image: url('../../img/intro_bg.png')
+            min-height: 250px
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            box-shadow: 0px 0px 2px 0 #888
+.Home__about
+    position: relative
+    padding-top: 30px
+    min-height: 500px
+    width: 100%
+    background-color: #333
+    color: #eee
+    &__title
+        text-align: center
+        margin-bottom: 60px
+        position: relative  
+        &::after
+            content: ''
+            height: 300%
+            width: 80%
+            position: absolute
+            border-top: 1px solid #ccc
+            border-bottom: 1px solid #ccc
+            left: 10%
+            top: -100%
+    &__slider
+        width: 100%
+        height: 400px
+        position: relative
+        &__slide
+            position: absolute
+            width: 100%
+            height: 100%
+            opacity: 0
+            animation: slide 12s infinite
+            display: flex
+            justify-content: space-around
+            align-items: center
+            &__section
+                padding: 20px
+                height: 100%
+                width: 50%
+                display: flex
+                flex-direction: column
+                align-items: center
+                & img
+                    max-width: 400px
+                    width: 90%
+                    height: 80%
+                & p 
+                    padding: 10px
+                    text-align: center
+        &__slide
+            &:nth-child(2) 
+                animation-delay: 4s
+            &:nth-child(3) 
+                animation-delay: 8s
+                
+@keyframes slide
+    0% 
+        opacity: 0
+    5%
+        opacity: 1
+    30%
+        opacity: 1
+    33%
+        opacity: 0
+    100%
+        opacity: 0
+
+.Home__blog
+    padding: 20px
+    margin-top: 50px
+    &__title
+        text-align: center
+        margin-bottom: 60px
+        position: relative  
+        &::after
+            content: ''
+            height: 300%
+            width: 80%
+            position: absolute
+            border-top: 1px solid #ccc
+            border-bottom: 1px solid #ccc
+            left: 10%
+            top: -100%
+    &__latest
+        min-height: 400px
+        width: 100%
+        display: flex
+        justify-content: space-around
+        align-items: center
+        &__item
+            width: 30%
+            display: flex
+            flex-direction: column
+            color: #333333
+            text-decoration: none
+            box-shadow: 0px 0px 1px 1px #333
+            &__image
+                width: 100%
+                height: 250px
+                & img
+                    width: 100%
+                    height: 100%
+            & h4
+                padding: 10px 10px
+                text-align: center
+                height: 50px
+            p
+                display: flex
+                justify-content: flex-end
+                font-size: 14px
+                color: brown
+                padding: 3px
+                

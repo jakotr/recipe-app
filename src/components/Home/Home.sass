@@ -1,6 +1,6 @@
 .Home__recipes
     padding: 50px 30px
-    background-color: #333333
+    background-color: $dark-color
     &__elements
         display: flex
         justify-content: space-evenly
@@ -10,7 +10,7 @@
             position: relative
             min-width: 200px
             height: 180px
-            box-shadow: 0 0 2px 0 #fff
+            box-shadow: 0 0 2px 0 $bright-level1-color
             margin: 5px
             transition: .3s
             &__image
@@ -22,7 +22,7 @@
                 bottom: 0px
                 left: 0
                 text-align: center
-                color: white
+                color: $bright-level1-color
                 padding: 3px 0
                 background-color: #05050581
             &:hover
@@ -35,8 +35,7 @@
         padding: 20px
 .Home__intro
     &__info
-        // background-image: linear-gradient(to top, #e8eaee 0%, #ffffff 100%)
-        color: #333
+        color: $dark-color
         min-height: 500px
         position: relative
         margin-bottom: 50px
@@ -50,13 +49,13 @@
             position: absolute
             bottom: 100px
             right: 150px
-            background-color: brown
-            color: #eeeeee
+            background-color: $main-color
+            color: $bright-level2-color
             text-decoration: none
             padding: 10px 20px
             border-radius: 5px
-            font-size: 22px
-            box-shadow: 0 1px 2px 1px #aaa
+            font-size: $subtitle-font-size
+            box-shadow: 0 1px 2px 1px $box-shadow-dark-color
             transition: .3s
             &:hover
                 transform: scale(1.1) translateY(10px)
@@ -66,14 +65,14 @@
             background-size: cover
             background-position: center
             background-repeat: no-repeat
-            box-shadow: 0px 0px 2px 0 #888
+            box-shadow: 0px 0px 2px 0 $box-shadow-dark-color
 .Home__about
     position: relative
     padding-top: 30px
     min-height: 500px
     width: 100%
-    background-color: #333
-    color: #eee
+    background-color: $dark-color
+    color: $bright-level2-color
     &__title
         text-align: center
         margin-bottom: 60px
@@ -83,8 +82,8 @@
             height: 300%
             width: 80%
             position: absolute
-            border-top: 1px solid #ccc
-            border-bottom: 1px solid #ccc
+            border-top: 1px solid $bright-level3-color
+            border-bottom: 1px solid $bright-level3-color
             left: 10%
             top: -100%
     &__slider
@@ -144,8 +143,8 @@
             height: 300%
             width: 80%
             position: absolute
-            border-top: 1px solid #ccc
-            border-bottom: 1px solid #ccc
+            border-top: 1px solid $bright-level3-color
+            border-bottom: 1px solid $bright-level3-color
             left: 10%
             top: -100%
     &__latest
@@ -158,9 +157,9 @@
             width: 30%
             display: flex
             flex-direction: column
-            color: #333333
+            color: $dark-color
             text-decoration: none
-            box-shadow: 0px 0px 1px 1px #333
+            box-shadow: 0px 0px 2px 0px $dark-color
             &__image
                 width: 100%
                 height: 250px
@@ -174,7 +173,8 @@
             p
                 display: flex
                 justify-content: flex-end
-                font-size: 14px
-                color: brown
+                font-size: $small-font-size
+                font-family: cursive
+                color: $main-color
                 padding: 3px
                 

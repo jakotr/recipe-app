@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-import './Nav.sass';
+import '../../sass/style.sass';
 
 export default function Nav() {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './BlogReadMore.sass';
+import '../../sass/style.sass';
 
 export default function BlogReadMore({location, match}) {
 

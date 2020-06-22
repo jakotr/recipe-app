@@ -4,7 +4,7 @@ import RecipeItem from '../RecipeItem/RecipeItem';
 import {fetchData} from '../../api';
 import SearchBar from '../SearchBar/SearchBar';
 
-import './Recipes.sass'
+import '../../sass/style.sass';
 
 
 export default function Recipes(props) {

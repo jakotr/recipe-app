@@ -1,6 +1,6 @@
 import React, {useState, useEffect}  from 'react';
 
-import './RecipeItem.sass';
+import '../../sass/style.sass';
 
 
 export default function RecipeItem({data, index, display}) {

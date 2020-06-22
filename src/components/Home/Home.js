@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 import {blogData, aboutData} from '../../util/data';
 
-import './Home.sass';
+import '../../sass/style.sass';
 
 export default function Home() {
     return (

@@ -2,7 +2,7 @@ import React from 'react';
 
 import {aboutData} from '../../util/data';
 
-import './About.sass';
+import '../../sass/style.sass';
 
 export default function About() {
 

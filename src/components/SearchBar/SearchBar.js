@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './SearchBar.sass';
+import '../../sass/style.sass';
 
 export default function SearchBar({handleSubmit, placeholder}) {
 

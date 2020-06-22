@@ -4,22 +4,23 @@
   box-sizing: border-box
 
 body 
-    background-color: #eee
-    font-family: 'Roboto Mono', monospace
+  background-color: $bright-level2-color
+  font-family: $main-font-family
+  color: $dark-color
 
 .App
-    width: 80%
-    max-width: 1200px
-    min-height: calc(100vh - 30px)
-    margin: 0 auto
-    background-color: #fff
-    box-shadow: 0 0 2px 2px #ccc
+  width: 80%
+  max-width: 1200px
+  min-height: calc(100vh - 30px)
+  margin: 0 auto
+  background-color: $bright-level1-color
+  box-shadow: 0 0 2px 2px $box-shadow-bright-color
 .footer
-  background-color: #333
+  background-color: $dark-color
   width: 100%
-  color: white
-  height: 30px
-  font-size: 12px
+  color: $bright-level1-color
+  height: 40px
+  font-size: $small-font-size
   display: flex
   justify-content: center
   align-items: center
@@ -27,14 +28,14 @@ body
   position: fixed
   bottom: 20px
   right: 20px
-  background-color: brown
+  background-color: $main-color
   width: 40px
   height: 40px
   display: flex
   justify-content: center
   align-items: center
   font-size: 26px
-  color: #eee
+  color: $bright-level2-color
   cursor: pointer
   border-radius: 50%
 

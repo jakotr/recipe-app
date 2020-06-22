@@ -9,7 +9,7 @@ import Blog from './components/Blog/Blog';
 import About from './components/About/About';
 import BlogReadMore from './components/BlogReadMore/BlogReadMore';
 
-import './App.sass';
+import './sass/style.sass';
 
 function App() {
   return (

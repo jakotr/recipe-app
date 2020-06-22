@@ -1,9 +1,10 @@
 .About
     margin-top: 30px
+    color: $dark-color
     &__title
         margin-bottom: 30px
         text-align: center
-        font-size: 22px
+        font-size: $subtitle-font-size
         letter-spacing: 1px
         position: relative
         &::after
@@ -13,7 +14,7 @@
             left: 50%
             transform: translateX(-50%)
             width: 60%
-            border-bottom: 1px solid #333
+            border-bottom: 1px solid $dark-color
     &__section
         padding: 50px 30px
         display: flex
@@ -34,11 +35,11 @@
             align-items: center
             justify-content: center
             & h4
-                font-size: 18px
+                font-size: $normal-font-size
                 padding-bottom: 15px
 
 .bgc-right
-    background-color: #eee
+    background-color: $bright-level2-color
     flex-direction: row-reverse
 .pleft
     padding: 0 20px 0 0

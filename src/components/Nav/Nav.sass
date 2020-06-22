@@ -52,6 +52,43 @@
                     transition: .3s
                 &:hover::before
                     border-bottom: 20px solid $main-color
+    &__hamburger
+        display: none
+        z-index: 1
+    &__links__activeOnHam
+        position: fixed
+        top: 130px
+        right: 0
+        height: 0
+        width: 100vw
+        z-index: 1
+        background-color: $bright-level2-color
+        overflow: hidden
+        transition: .5s
+        &__list
+            display: flex
+            flex-direction: column
+            list-style: none
+            align-items: center
+            &__item
+                color: $dark-color
+                text-decoration: none
+                font-size: $normal-font-size
+                padding: 5px
+.active 
+    height: 20vh
                     
+@media (max-width: $tablet-width)
+    .Nav
+        &__links
+            display: none
+        &__hamburger
+            display: flex
+            margin-right: 30px
 
-
+@media (max-width: $phone-small-width)
+    .Nav__logo__link
+        &__icon
+            font-size: 50px
+        &__title
+            font-size: 24px

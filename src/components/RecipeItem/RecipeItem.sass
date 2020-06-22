@@ -11,6 +11,7 @@
     align-items: center
     &__overlay
         width: 70%
+        min-width: 768px
         min-height: 50%
         background-color: $bright-level1-color
         display: flex
@@ -101,11 +102,40 @@
             border: none
             color: $main-color
 
-                
-                    
-        
-        
-        
+@media (max-width: $tablet-width) 
+    .RecipeItem__overlay
+        min-width: 100%       
+        flex-direction: column
+        &__section
+            flex-direction: row
+            width: 100%
+            border: none
+            &__image
+                min-height: 200px
+                height: 200px
+                min-width: 200px
+                padding-right: 20px
+            &__table
+                margin-top: 0
+        &__ingredients
+            width: 100%
+            & h3
+                margin: 5px 0
+@media (max-width: 550px)
+    .RecipeItem__overlay__section__image
+        display: none
+@media (max-width: $phone-small-width)
+    .RecipeItem__overlay
+        &__section
+            flex-direction: column
+            &__image
+                display: block
+                margin-bottom: 20px
+        &__ingredients
+            & h3 
+                display: none
+            &__row
+                display: none
 
 
         

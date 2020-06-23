@@ -4,12 +4,6 @@ import '../../sass/style.sass';
 
 export default function BlogReadMore({location, match}) {
 
-    if(!location.query) {
-        // return 'loading...'
-    }
-
-    console.log(location, match.params.id)
-
     return (
         <div className='BlogReadMore'>
             <div className="BlogReadMore__image">

@@ -21,7 +21,7 @@ export default function Blog() {
                         <div className="Blog__latest__item__description">
                             <h4 className="Blog__latest__item__description__title">{titleData[idx]}</h4>
                             <p className="Blog__latest__item__description__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptas nostrum mollitia quod accusamus aperiam nesciunt doloremque quis ad cumque dolor illo, architecto exercitationem sapiente. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium labore et aut, ex ipsa, quisquam, iste doloremque tenetur repellendus magni earum. Deleniti illo nostrum dicta sint fugiat perferendis a dignissimos est? Delectus, deserunt! Nihil, odio. Mollitia voluptate, voluptatibus quas veritatis maxime culpa totam! Quo, officia unde ut quasi dolore tempora...
-                            <Link to={{pathname: `/blog/${titleData[idx]}`, query: `${data}`}} className='Blog__latest__item__description__content__link'>
+                            <Link to={{pathname: `${process.env.PUBLIC_URL}/blog/${titleData[idx]}`, query: `${data}`}} className='Blog__latest__item__description__content__link'>
                                 Read more
                             </Link> 
                             </p>

@@ -15,20 +15,20 @@ export default function Nav() {
     return (
         <div className="Nav">
             <div className="Nav__logo">
-                <Link onClick = {isOpen ? handleClick : null} to='/recipe-app' className = 'Nav__logo__link'>
+                <Link onClick = {isOpen ? handleClick : null} to={process.env.PUBLIC_URL + '/'} className = 'Nav__logo__link'>
                     <i className='Nav__logo__link__icon fas fa-drumstick-bite'></i>
                     <p className='Nav__logo__link__title'><span>R</span>ecipe<span>I</span>deas</p>
                 </Link>   
             </div>
             <div className={"Nav__links"}>
                 <ul className="Nav__links__list">
-                    <Link to='/recipes' className="Nav__links__list__item">
+                    <Link to={process.env.PUBLIC_URL + '/recipes'} className="Nav__links__list__item">
                         <li>Recipes</li>
                     </Link>
-                    <Link to='/about' className="Nav__links__list__item">
+                    <Link to={process.env.PUBLIC_URL + '/about'} className="Nav__links__list__item">
                         <li>About</li>
                     </Link>
-                    <Link to='/blog' className="Nav__links__list__item">
+                    <Link to={process.env.PUBLIC_URL + '/blog'} className="Nav__links__list__item">
                         <li>Blog</li>
                     </Link>
                 </ul>

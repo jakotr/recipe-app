@@ -30,19 +30,19 @@ export default function Home() {
             </section>
             <section className="Home__recipes">
                 <div className="Home__recipes__elements">
-                    <Link to={{pathname: '/recipes', query: 'breakfast'}} className="Home__recipes__elements__element">
+                    <Link to={{pathname: `${process.env.PUBLIC_URL}/recipes`, query: 'breakfast'}} className="Home__recipes__elements__element">
                         <img src="https://cdn.pixabay.com/photo/2017/05/07/08/56/pancakes-2291908_960_720.jpg" alt="breakfast" className="Home__recipes__elements__element__image"/>
                         <p className="Home__recipes__elements__element__title">Breakfast</p>
                     </Link>
-                    <Link to={{pathname: '/recipes', query: 'lunch'}} className="Home__recipes__elements__element">
+                    <Link to={{pathname: `${process.env.PUBLIC_URL}/recipes`, query: 'lunch'}} className="Home__recipes__elements__element">
                         <img src="https://cdn.pixabay.com/photo/2014/10/19/20/59/hamburger-494706_960_720.jpg" alt="lunch" className="Home__recipes__elements__element__image"/>
                         <p className="Home__recipes__elements__element__title">Lunch</p>
                     </Link>
-                    <Link to={{pathname: '/recipes', query: 'dinner'}} className="Home__recipes__elements__element">
+                    <Link to={{pathname: `${process.env.PUBLIC_URL}/recipes`, query: 'dinner'}} className="Home__recipes__elements__element">
                         <img src="https://cdn.pixabay.com/photo/2014/04/05/11/27/buffet-315691_960_720.jpg" alt="dinner" className="Home__recipes__elements__element__image"/>
                         <p className="Home__recipes__elements__element__title">Dinner</p>
                     </Link>
-                    <Link to={{pathname: '/recipes', query: 'dessert'}} className="Home__recipes__elements__element">
+                    <Link to={{pathname: `${process.env.PUBLIC_URL}/recipes`, query: 'dessert'}} className="Home__recipes__elements__element">
                         <img src="https://cdn.pixabay.com/photo/2017/05/02/18/20/blueberries-2278921_960_720.jpg" alt="dessert" className="Home__recipes__elements__element__image"/>
                         <p className="Home__recipes__elements__element__title">Dessert</p>
                     </Link>
@@ -91,7 +91,7 @@ export default function Home() {
                 </h2>
                 <div className="Home__blog__latest">
                     <Link 
-                        to={{pathname: `/blog/${blogData.titleData[0]}`, query: `${blogData.imageData[0]}`}} className="Home__blog__latest__item"
+                        to={{pathname: `${process.env.PUBLIC_URL}/blog/${blogData.titleData[0]}`, query: `${blogData.imageData[0]}`}} className="Home__blog__latest__item"
                     >
                         <div className="Home__blog__latest__item__image">
                             <img src={blogData.imageData[0]} alt={blogData.titleData[0]} />
@@ -104,7 +104,7 @@ export default function Home() {
                         </p>
                     </Link>
                     <Link 
-                        to={{pathname: `/blog/${blogData.titleData[1]}`, query: `${blogData.imageData[1]}`}} className="Home__blog__latest__item"
+                        to={{pathname: `${process.env.PUBLIC_URL}/blog/${blogData.titleData[1]}`, query: `${blogData.imageData[1]}`}} className="Home__blog__latest__item"
                     >
                         <div className="Home__blog__latest__item__image">
                             <img src={blogData.imageData[1]} alt={blogData.titleData[1]} />
@@ -117,7 +117,7 @@ export default function Home() {
                         </p>
                     </Link>
                     <Link 
-                        to={{pathname: `/blog/${blogData.titleData[2]}`, query: `${blogData.imageData[2]}`}} className="Home__blog__latest__item"
+                        to={{pathname: `${process.env.PUBLIC_URL}/blog/${blogData.titleData[2]}`, query: `${blogData.imageData[2]}`}} className="Home__blog__latest__item"
                     >
                         <div className="Home__blog__latest__item__image">
                             <img src={blogData.imageData[2]} alt={blogData.titleData[2]} />

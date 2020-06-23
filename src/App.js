@@ -17,11 +17,11 @@ function App() {
       <div className="App">
         <Nav  />
         <Switch>
-          <Route path='/recipe-app' exact component={Home} />
-          <Route path='/recipes' exact component={Recipes} />
-          <Route path='/about' component= {About} />
-          <Route path='/blog' exact component= {Blog} />
-          <Route path='/blog/:id' component= {BlogReadMore} />
+          <Route path={process.env.PUBLIC_URL + '/'} exact component={Home} />
+          <Route path={process.env.PUBLIC_URL + '/recipes'} exact component={Recipes} />
+          <Route path={process.env.PUBLIC_URL + '/about'} component= {About} />
+          <Route path={process.env.PUBLIC_URL + '/blog'} exact component= {Blog} />
+          <Route path={process.env.PUBLIC_URL + '/blog/:id'} component= {BlogReadMore} />
         </Switch>
       </div>
       <Link

@@ -15,7 +15,7 @@ export default function Nav() {
     return (
         <div className="Nav">
             <div className="Nav__logo">
-                <Link onClick = {isOpen ? handleClick : null} to='/' className = 'Nav__logo__link'>
+                <Link onClick = {isOpen ? handleClick : null} to='/recipe-app' className = 'Nav__logo__link'>
                     <i className='Nav__logo__link__icon fas fa-drumstick-bite'></i>
                     <p className='Nav__logo__link__title'><span>R</span>ecipe<span>I</span>deas</p>
                 </Link>   

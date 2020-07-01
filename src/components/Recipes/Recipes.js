@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import CircleLoader from 'react-spinners/CircleLoader';
 
 import RecipeItem from '../RecipeItem/RecipeItem';
 import {fetchData} from '../../api';
@@ -14,25 +15,32 @@ export default function Recipes(props) {
     const [isClicked, setIsClicked] = useState(false);
     const [recipeIndex, setRecipeIndex] = useState('');
     const [display, setDisplay] = useState(true);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if(props.location.query) {
-            setQuery(props.location.query);
+            const fetchedData = async () => {
+                setData(await fetchData(props.location.query));
+                setIsLoading(false);
+            }
+            setIsLoading(true);
+            fetchedData();
+
+            setQuery(props.location.query)
         }
     }, [props.location.query])
-  
-    useEffect(() => {
-      const fetchedData = async () => {
-        setData(await fetchData(query));
-      }
-      fetchedData();
-    }, [query]);
-  
+
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      setQuery(e.target.query.value)
+      const fetchedData = async () => {
+        setData(await fetchData(e.target.query.value));
+        setIsLoading(false);
+      }
+      setIsLoading(true);
+      fetchedData();
       
+      setQuery(e.target.query.value)
       e.target.query.value = '';
     }
 
@@ -41,12 +49,21 @@ export default function Recipes(props) {
         setIsClicked(true); 
         setDisplay(!display);
     }
+
+    const override =`
+        margin-top: 20vh;
+    `;
     
     return (
         <div className = 'Recipes'>
             <SearchBar handleSubmit = {handleSubmit} placeholder = {query} />
             {isClicked ? <RecipeItem data = {data.data.hits} index = {recipeIndex} display = {display} /> : null}
-            {!data.data ? 'loading...' : 
+            { isLoading ? 
+                <CircleLoader 
+                    css={override}
+                    size={50}
+                    color={'#a52a2a'}
+                /> : 
                 data.data.hits.map((recipe, index) => (
                     <div key ={index} className="Recipes__item">
                         <div className="Recipes__item__overlay">

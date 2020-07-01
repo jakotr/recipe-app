@@ -5,11 +5,6 @@ import '../../sass/style.sass';
 
 export default function RecipeItem({data, index, display}) {
 
-    // if(!data) {
-    //     return 'loading...';
-    // }
-
-    // const [recipe, setRecipe] = useState(data);
     const [isClicked, setIsClicked] = useState(true);
 
     useEffect(() => {
@@ -19,8 +14,6 @@ export default function RecipeItem({data, index, display}) {
     const handleClick = () => {
         setIsClicked(false);
     }
-
-    // console.log(data, index);
 
     return (
         isClicked ?
